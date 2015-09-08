@@ -34,7 +34,7 @@ function Battery:new(args)
 	-- Create imagebox widget
 	obj.widget = wibox.widget.imagebox()
 	obj.widget:set_resize(false)
-	obj.widget:set_image(config.."/awesome.battery-widget/12.png")
+	obj.widget:set_image(config.."/awesome.battery-widget/icons/12.png")
 
 	-- Add a tooltip to the imagebox
 	obj.tooltip = awful.tooltip({ objects = { K },
@@ -57,7 +57,7 @@ end
 
 function Battery:update(status)
 	local sprite = round((self:getCapacity() / 100)*12)
-	self.widget:set_image(config.."/awesome.battery-widget/"..sprite..".png")
+	self.widget:set_image(config.."/awesome.battery-widget/icons/"..sprite..".png")
 end
 
 function Battery:getCapacity()

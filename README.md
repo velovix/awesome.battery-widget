@@ -31,7 +31,7 @@ empty table sets all configurations to their defaults. This should work for most
 if you think you're special.
 
 	```
-	battery = battery_widget:new({})
+	local battery = battery_widget:new({})
 	```
 5. Finally, to add your widget to the bar, you'll have to add the following line somewhere after the `right_layout`
 table is created.
@@ -43,7 +43,7 @@ table is created.
 
 ###Configuration
 For most cases, the default configuration will work fine. Unless you know for sure that you're different, you should
-try this first and see what kind of results you get. If you do need special configuration options, there are three
+try this first and see what kind of results you get. If you do need special configuration options, there are five
 provided. Feed them into your `new` function instead of the default empty table.
 
 - **batteryDir**: The directory of the battery information files. The default is `/sys/class/power_supply/`.
@@ -51,4 +51,5 @@ provided. Feed them into your `new` function instead of the default empty table.
 `BAT0`.
 - **capacityFile**: The name of the file that contains the current battery percentage. The default is `capacity`.
 - **statusFile**: The name of the file that contains the battery charging status. The default is `status`.
-- **isChargingIndicator**: The text to look for in the status file that indicates the battery is charging. The default is `Charging`.
+- **isChargingIndicator**: The text to look for in the status file that indicates the battery is charging. The
+default is `Charging`.

@@ -50,3 +50,5 @@ provided. Feed them into your `new` function instead of the default empty table.
 - **battery**: The name of your battery. You may have to change this if you have multiple batteries. The default is
 `BAT0`.
 - **capacityFile**: The name of the file that contains the current battery percentage. The default is `capacity`.
+- **statusFile**: The name of the file that contains the battery charging status. The default is `status`.
+- **isChargingIndicator**: The text to look for in the status file that indicates the battery is charging. The default is `Charging`.

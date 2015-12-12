@@ -30,6 +30,8 @@ function Battery:new(args)
 	obj.batteryDir = args.batteryDir or "/sys/class/power_supply/"
 	obj.battery = args.battery or "BAT0"
 	obj.capacityFile = args.capacityFile or "capacity"
+	obj.statusFile = args.statusFile or "status"
+	obj.isChargingIndicator = args.isChargingIndicator or "Charging"
 
 	-- Create imagebox widget
 	obj.widget = wibox.widget.imagebox()
@@ -57,11 +59,23 @@ end
 
 function Battery:update(status)
 	local sprite = round((self:getCapacity() / 100)*12)
-	self.widget:set_image(config.."/awesome.battery-widget/icons/"..sprite..".png")
+	local suffix = ""
+	if self:getCharging()  then
+		suffix = "c"
+	end
+	self.widget:set_image(config.."/awesome.battery-widget/icons/"..sprite..suffix..".png")
 end
 
 function Battery:getCapacity()
 	return tonumber(run("cat "..self.batteryDir..self.battery.."/"..self.capacityFile))
+end
+
+function Battery:getCharging()
+	local status = run("cat "..self.batteryDir..self.battery.."/"..self.statusFile)
+	if status:find("Charging") ~= nil then
+		return true
+	end
+	return false
 end
 
 function Battery.mt:__call(...)

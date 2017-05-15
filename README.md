@@ -1,12 +1,14 @@
 # Battery Widget
 Provides a simple battery widget for the Awesome window manager. It's about as simple as it gets.
 
-###Dependencies
+### Dependencies
+
 No extra Awesome libraries are required, but you have to be using an operating system with the `/sys/class/power_supply/`
 directory or a directory with the same functionality somewhere else. This is where the widget checks your battery
 percentage. Any modern Linux distribution should have this set up already.
 
-###Setup
+### Setup
+
 1. Navigate to your Awesome config directory (usually `~/.config/awesome`) and clone this repository with the following
 command:
 
@@ -41,7 +43,8 @@ table is created.
 	```
 6. Restart Awesome WM and you're finished! You should see a white battery icon on the top right of the screen!
 
-###Configuration
+### Configuration
+
 For most cases, the default configuration will work fine. Unless you know for sure that you're different, you should
 try this first and see what kind of results you get. If you do need special configuration options, there are five
 provided. Feed them into your `new` function instead of the default empty table.

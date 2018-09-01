@@ -1,6 +1,15 @@
 # Battery Widget
 Provides a simple battery widget for the Awesome window manager. It's about as simple as it gets.
 
+### Deprecation Notice
+
+This widget has been deprecated. I'm not personally using it anymore. I will
+happily take pull requests but I won't be actively maintaining it myself.
+
+If you want a window manager-agnostic battery indicator, I would recommend
+cbatticon. It has the benefit of using your icon pack instead of the crappy
+custom icons I made.
+
 ### Dependencies
 
 No extra Awesome libraries are required, but you have to be using an operating system with the `/sys/class/power_supply/`
